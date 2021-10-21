@@ -58,6 +58,3 @@ let weatherData = getWeather()
       let b = forecast.innerHTML = `${temp}&#176;  ${desc}`;
     }).catch(console.error);
 
-
-// https://cloud.google.com/translate/docs/reference/rest/v2/translate
-// https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch 
