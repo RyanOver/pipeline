@@ -1,4 +1,6 @@
 from flask import Flask, render_template
+import json
+import requests
 import os
 
 app = Flask(__name__)
@@ -7,7 +9,24 @@ app = Flask(__name__)
 @app.route('/')
 def home():
 
-  return render_template('index.html')
+  OPENWEATHER_API_KEY = os.environ.get('OPENWEATHER_API_KEY')
+
+  weather_url = f'https://api.openweathermap.org/data/2.5/weather?q=Montreal&appid={OPENWEATHER_API_KEY}&units=metric'
+  weather = requests.get(weather_url)
+  w = json.dumps(weather.json())
+  x = json.loads(w)
+  f = x['weather']
+  temp = x['main']['temp']
+  condition = f[0]['description']
+
+  data = [
+    {
+    'temp': round(temp),
+    'condition': condition
+    }
+  ]
+
+  return render_template('index.html', data=data)
 
 '''
 gcloud builds submit --tag gcr.io/PROJECT-ID/test-run

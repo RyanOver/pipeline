@@ -12,19 +12,23 @@
 </head>
 
 <body class="bg-secondary text-white text-center">
+  <div style="margin-top: 20%;">
   
     <div class="date">
-        <h1 id="date">Date here</h1>
+        <h1 id="date">Date here</h1><br>
     </div>
 
     <div class="weather">
-        <h2 id="weather">Weather Forcecaste here</h2>
+      {% for d in data %}
+      <h2 id="weather">{{ d.temp }}° {{ d.condition }}</h2><br>
+      {% endfor %}
     </div>
 
     <div class="time">
         <h1 id="time">Time here</h1>
     </div>
     
+  </div>  
   <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 

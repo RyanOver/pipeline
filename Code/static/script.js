@@ -37,24 +37,24 @@ function displayTime() {
 }
 
 // Display weather forecast
-let forecast = document.querySelector('#weather')
+// let forecast = document.querySelector('#weather')
 
-let api_id_key = 'cc6566b18fb703c7c5f1928bd738a82c'
-let weather_url = `https://api.openweathermap.org/data/2.5/weather?q=Montreal&appid=${api_id_key}&units=metric`
+// let api_id_key = 'cc6566b18fb703c7c5f1928bd738a82c'
+// let weather_url = `https://api.openweathermap.org/data/2.5/weather?q=Montreal&appid=${api_id_key}&units=metric`
 
-async function getWeather() 
-{
-  let response = await fetch(weather_url);
-  let data = await response.json()
-  console.log(data)
-  return data;
-}
+// async function getWeather() 
+// {
+//   let response = await fetch(weather_url);
+//   let data = await response.json()
+//   console.log(data)
+//   return data;
+// }
 
 
-let weatherData = getWeather()
-  .then(data => {
-      let desc = data.weather[0].description;
-      let temp = Math.ceil(data.main.temp);
-      let b = forecast.innerHTML = `${temp}&#176;  ${desc}`;
-    }).catch(console.error);
+// let weatherData = getWeather()
+//   .then(data => {
+//       let desc = data.weather[0].description;
+//       let temp = Math.ceil(data.main.temp);
+//       let b = forecast.innerHTML = `${temp}&#176;  ${desc}`;
+//     }).catch(console.error);
 
