@@ -9,8 +9,8 @@ export LOCATION=northamerica-northeast1
 export REPOSITORY=clock-weather
 export IMAGE=v1
 
-gcloud artifacts repositories create $REPOSITORY \
-    --repository-format=python \
+gcloud alpha artifacts repositories create $REPOSITORY \
+    --repository-format=Docker \
     --location=northamerica-northeast1 \
     --description="Clock and Weather repository"
 

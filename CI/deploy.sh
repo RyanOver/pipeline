@@ -11,10 +11,12 @@ pip3 install -r requirements.txt
 
 cd ../Terraform
 
-terraform plan
-
 export TF_VAR_api_key=$OPENWEATHER_API_KEY 
 
 echo TF_VAR_api_key
+
+terraform init
+
+terraform plan
 
 terraform apply

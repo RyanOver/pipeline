@@ -12,3 +12,12 @@ variable "location" {
   type = string
   default = "northamerica-northeast1"
 }
+
+variable "repository_id" {
+  type = string
+  default = "clock-weather"
+}
+
+variable "api_key" {
+  type = string
+}
